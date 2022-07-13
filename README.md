@@ -12,6 +12,12 @@ pip3 install -m requirements.txt
 pip freeze > requirements.txt
 ```
 
+## Run
+
+```bash
+python3 wsgi.py
+```
+
 ### Ref
 
 [https://github.com/linhnvc/vietnamese-text-summarization](https://github.com/linhnvc/vietnamese-text-summarization)
