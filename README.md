@@ -18,6 +18,13 @@ pip freeze > requirements.txt
 python3 wsgi.py
 ```
 
+## Run with docker
+
+```bash
+docker build --tag text-summarization
+docker run -p 5000:5000 <id>
+```
+
 ### Ref
 
 [https://github.com/linhnvc/vietnamese-text-summarization](https://github.com/linhnvc/vietnamese-text-summarization)

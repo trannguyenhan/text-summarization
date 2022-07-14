@@ -10,20 +10,6 @@ def convert_unicode(document):
     document = unicodedata.normalize('NFC', document)
     return document
 
-#hàm xóa các stop word
-def remove_stop_word(document):
-    document_final = ""
-    file_stop_word = open(current_dir + "/stopword.txt", "r", encoding="utf8")
-    stop_word_list = file_stop_word.read()
-    stop_word = stop_word_list.split('\n')
-    document_list = document.split()
-
-    for word in document_list:
-        if(word not in stop_word):
-            document_final = document_final + word + " "
-
-    return document_final
-
 bang_nguyen_am = [['a', 'à', 'á', 'ả', 'ã', 'ạ', 'a'],
                   ['ă', 'ằ', 'ắ', 'ẳ', 'ẵ', 'ặ', 'aw'],
                   ['â', 'ầ', 'ấ', 'ẩ', 'ẫ', 'ậ', 'aa'],
@@ -155,13 +141,7 @@ def text_preprocess(document):
     # đưa về lower
     document = document.lower()
 
-    # xóa các ký tự không cần thiết
-    # document = re.sub(r'[^\s\wáàảãạăắằẳẵặâấầẩẫậéèẻẽẹêếềểễệóòỏõọôốồổỗộơớờởỡợíìỉĩịúùủũụưứừửữựýỳỷỹỵđ_]',' ',document)
-
     # xóa khoảng trắng thừa
     document = re.sub(r'\s+', ' ', document).strip()
-
-    # xóa stop word
-    document = remove_stop_word(document)
 
     return document
